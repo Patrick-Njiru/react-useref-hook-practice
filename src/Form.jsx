@@ -5,13 +5,14 @@ const Form = () => {
 
   console.log(refContainer);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
     console.log(refContainer);
   }
   
   return (
     <div>
-      <form className='form' onSubmit={handleSubmit}>
+      <form className='form'>
         <legend className='text-center my-3'> Create User </legend>
         <fieldset className="form-floating mb-3">
           <input
@@ -35,7 +36,7 @@ const Form = () => {
           />
           <label htmlFor="email"> Email  </label>
         </fieldset>
-        <button type="submit" className="btn btn-primary btn-md"> Add </button>
+        <button type="submit" className="btn btn-primary btn-md" onClick={handleSubmit}> Add </button>
       </form>
     </div>
   )
